@@ -1,31 +1,25 @@
-import logo from './Kono_Aqua.png';
+import { TodoCounter } from './TodoCounter'
+import { TodoSearch } from './TodoSearch'
+import { TodoList } from './TodoList'
+import { TodoItem } from './TodoItem'
+import { CreateTodoButton } from './CreateTodoButton'
 import './App.css';
 
 function App() {
   return (
     <div className="App">
 
-      <TodoItem />
-      <TodoItem />
-      <TodoItem />
+      <TodoCounter />
+      <TodoSearch />
+      
+      <TodoList>
+        <TodoItem />
+        <TodoItem />
+        <TodoItem />
+      </TodoList>
 
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Puto el que lee
-        </p>
-      </header>
+      <CreateTodoButton />
     </div>
-  );
-}
-
-function TodoItem() {
-  return(
-    <li>
-      <span>V</span>
-      <p>Ir a Mar del Plata</p>
-      <span>X</span>
-    </li>
   );
 }
 
