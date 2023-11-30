@@ -1,15 +1,11 @@
 import {TodoIcon} from "./TodoIcon"
 
-function DeleteIcon (props) {
+function DeleteIcon ({onDelete}) {
     return (
-        // <span 
-        // className="Icon Icon-delete"
-        // onClick={props.onDelete}>
-        //   X
-        // </span>
         <TodoIcon 
         type="delete"
-        color="red"/>
+        color="grey"
+        onClick={onDelete}/>
     );
 };
 
