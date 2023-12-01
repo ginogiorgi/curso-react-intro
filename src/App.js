@@ -76,6 +76,6 @@ function App() {
       <CreateTodoButton />
     </>
   );
-}
+};
 
 export default App;
