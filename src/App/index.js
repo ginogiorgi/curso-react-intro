@@ -3,7 +3,12 @@ import React from 'react'
 import { AppUI } from "./AppUI"
 
 function App() {
-  const [todos, saveTodos] = useLocalStorage('EJEMPLOS_TODOS', []);
+  const {
+    item: todos,
+    saveItem: saveTodos,
+    loading,
+    error,
+  } = useLocalStorage('EJEMPLOS_TODOS', []);
   const [searchValue, setSearchValue] = React.useState("");
   const totalTodos = todos.length;
 
@@ -30,8 +35,6 @@ function App() {
     saveTodos(newTodos);
   };
 
-  console.log("1");
-
   return (
     <AppUI 
     completedTodos={completedTodos}
@@ -41,6 +44,8 @@ function App() {
     searchedTodos={searchedTodos}
     completeTodo={completeTodo}
     deleteTodo={deleteTodo}
+    loading={loading}
+    error={error}
     />
   );
 };
