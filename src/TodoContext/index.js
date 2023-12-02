@@ -47,7 +47,6 @@ function TodoProvider ({ children }) {
           deleteTodo,
           loading,
           error,
-          
         }}>
           { children }
         </TodoContext.Provider>
