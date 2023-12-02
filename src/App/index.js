@@ -30,6 +30,8 @@ function App() {
     saveTodos(newTodos);
   };
 
+  console.log("1");
+
   return (
     <AppUI 
     completedTodos={completedTodos}
