@@ -8,3 +8,7 @@
 .TodoCounter span {
     font-weight: bold;
 }
+.initialMessege {
+    color: green;
+    font-weight: bold;
+}
