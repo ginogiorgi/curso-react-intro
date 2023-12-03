@@ -21,6 +21,15 @@ function TodoProvider ({ children }) {
         return todo.text.toLowerCase().includes(searchValue.toLowerCase());
         }
       );
+
+      const addTodo = (text) => {
+        const newTodos = [...todos];
+        newTodos.push({
+          text,
+          completed: false,
+        })
+        saveTodos(newTodos);
+      };
     
       const completeTodo = (text) => {
         const newTodos = [...todos];
@@ -30,7 +39,6 @@ function TodoProvider ({ children }) {
         newTodos[todoIndex].completed = !todos[todoIndex].completed;
         saveTodos(newTodos);
         if (newTodos[todoIndex].completed === true) {
-           console.log("lol");
            pencilPlayer.play();
         }
       };
@@ -54,7 +62,8 @@ function TodoProvider ({ children }) {
           loading,
           error,
           openModal,
-          setOpenModal
+          setOpenModal,
+          addTodo
         }}>
           { children }
         </TodoContext.Provider>

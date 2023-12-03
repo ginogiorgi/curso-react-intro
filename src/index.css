@@ -4,6 +4,11 @@ body {
     background: #000000;
     color: #E7E9EA;
     font-family: 'Montserrat', sans-serif;
+    background-image: url("https://c5.kemono.su/data/6e/c6/6ec6e52a037102268d77e546de61c9970b03c597750b26fd8f7cd149531fe05d.png?f=Tittyphus.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
 }
 
 #root {
