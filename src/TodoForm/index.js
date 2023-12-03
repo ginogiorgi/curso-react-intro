@@ -1,10 +1,15 @@
-import './TodoForm.css'
+import React from 'react';
+import './TodoForm.css';
+import { TodoContext } from '../TodoContext';
 
 function TodoForm() {
+    const {setOpenModal} = React.useContext(TodoContext);
+    const onSubmit = (event) => {
+        event.preventDefault();
+    }
+
     return (
-        <form onSubmit={(event) => {
-            event.preventDefault();
-        }}>
+        <form onSubmit={onSubmit}>
             <label>Escribe tu nuevo To Do</label>
             <textarea placeholder="Ir de viaje" />
             <div className="TodoForm-buttonContainer">

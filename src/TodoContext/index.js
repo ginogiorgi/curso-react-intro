@@ -1,6 +1,6 @@
 import React from "react";
 import { useLocalStorage } from "./useLocalStorage";
-
+import pencilSound from './pencil.mp3'
 
 const TodoContext = React.createContext();
 
@@ -25,9 +25,14 @@ function TodoProvider ({ children }) {
       const completeTodo = (text) => {
         const newTodos = [...todos];
         const todoIndex = newTodos.findIndex ((todo) => todo.text === text);
-        
+        const pencilPlayer = new Audio(pencilSound)
+    
         newTodos[todoIndex].completed = !todos[todoIndex].completed;
         saveTodos(newTodos);
+        if (newTodos[todoIndex].completed === true) {
+           console.log("lol");
+           pencilPlayer.play();
+        }
       };
       
       const deleteTodo = (text) => {
